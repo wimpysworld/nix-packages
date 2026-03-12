@@ -7,7 +7,7 @@ repository:
   has_wiki: false
   has_discussions: false
   has_projects: false
-  has_issues: false
+  has_issues: true
   allow_merge_commit: false
   allow_squash_merge: true
   allow_rebase_merge: true
@@ -19,9 +19,9 @@ repository:
   allow_update_branch: true
   allow_auto_merge: true
   web_commit_signoff_required: false
-  private_vulnerability_reporting_enabled: false
-  vulnerability_alerts_enabled: false
-  automated_security_fixes_enabled: false
+  private_vulnerability_reporting_enabled: true
+  vulnerability_alerts_enabled: true
+  automated_security_fixes_enabled: true
   default_workflow_permissions: write
   can_approve_pull_request_reviews: true
   topics: []
