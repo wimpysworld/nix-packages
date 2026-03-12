@@ -38,6 +38,3 @@ environment.systemPackages = [
 - `aarch64-linux`
 - `aarch64-darwin`
 
-## Contributing
-
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community standards. Report security issues privately per [SECURITY.md](SECURITY.md).
