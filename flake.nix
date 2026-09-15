@@ -30,6 +30,14 @@
           else
             { }
         )
+        // (
+          if builtins.pathExists ./pkgs/wonkey/default.nix then
+            {
+              wonkey = pkgs.callPackage ./pkgs/wonkey/default.nix { };
+            }
+          else
+            { }
+        )
       );
     };
 }
