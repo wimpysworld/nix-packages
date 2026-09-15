@@ -23,6 +23,7 @@ Then reference packages in your configuration:
 ```nix
 environment.systemPackages = [
   inputs.wimpysworld-nix-packages.packages.${system}.tailor
+  inputs.wimpysworld-nix-packages.packages.${system}.wonkey
 ];
 ```
 
@@ -31,6 +32,7 @@ environment.systemPackages = [
 | Package | Description |
 |---------|-------------|
 | [`tailor`](pkgs/tailor/) | GitHub community health file manager |
+| [`wonkey`](pkgs/wonkey/) | Configure your XFKEY One Key Max on Linux |
 
 ## Supported Systems
 
