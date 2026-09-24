@@ -16,6 +16,25 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        {
+          default = pkgs.mkShell {
+            packages =
+              with pkgs;
+              [
+                actionlint
+                gh
+                just
+              ]
+              ++ import ./nix/loader.nix { inherit pkgs; };
+          };
+        }
+      );
+
       packages = forAllSystems (
         system:
         let
