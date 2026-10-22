@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0xybflydfraz5wnnqrrlwf23mp42xwfkfs4lfnkbjj6zizxwnnrx";
-    aarch64-linux = "1zp9c2kvhqcfjwgx7awn6623w81z2ixlfldnsf0af6n2qccydikc";
-    x86_64-darwin = "0h9vasabdsdcrm0w7rkdl7y8adhik2vkhg0ivh4v6ycgs44rv933";
-    aarch64-darwin = "05d4rlhpkxqg136b0il1x4a5kbzjqwyifz5lknlqx8kdmkzv4b5n";
+    x86_64-linux = "1bmpb8b7n5b57f13kxb571ankw06pn6mg4i4r4lkdjzrml9n0xyl";
+    aarch64-linux = "0qcjdzg0yidyr4gp2ixgwz92angcj65lr98512276443dppkrjav";
+    x86_64-darwin = "1njq5gkf4syl9g6mhqb7mf15bg3vzq9q0kv4f879mf96vfqz22d7";
+    aarch64-darwin = "0r4zyiry8dc0v6kl7qjg31633xkvnn2jyskzcy1kakjmd9ir93pm";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/wimpysworld/tailor/releases/download/v0.4.0/tailor_0.4.0_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/wimpysworld/tailor/releases/download/v0.4.0/tailor_0.4.0_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/wimpysworld/tailor/releases/download/v0.4.0/tailor_0.4.0_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/wimpysworld/tailor/releases/download/v0.4.0/tailor_0.4.0_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/wimpysworld/tailor/releases/download/v0.5.0/tailor_0.5.0_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/wimpysworld/tailor/releases/download/v0.5.0/tailor_0.5.0_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/wimpysworld/tailor/releases/download/v0.5.0/tailor_0.5.0_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/wimpysworld/tailor/releases/download/v0.5.0/tailor_0.5.0_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "tailor";
-  version = "0.4.0";
+  version = "0.5.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
