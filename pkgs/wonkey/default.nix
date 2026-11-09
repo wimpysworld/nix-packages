@@ -5,24 +5,22 @@
   fetchurl,
   installShellFiles,
   stdenvNoCC,
-  curl,
-  makeWrapper,
 }:
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1039yywzvrk0p8skxwp22vdc5sj9blryaqdy8a75k22gkn60rlkq";
-    aarch64-linux = "1fhw7glycsbliwkzjznwxia7zkh4g2ziidck6c146a9535zy4mr1";
+    x86_64-linux = "005qpsj9zy8s8ygbb60kgqwwrz2wwdzm17g84pcaay0q1s2mdckv";
+    aarch64-linux = "1ipikirgcpc585vgvks2vplvr0xs239hzn4brm29ichwic575krw";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/wimpysworld/WonKey/releases/download/v0.2.0/WonKey_0.2.0_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/wimpysworld/WonKey/releases/download/v0.2.0/WonKey_0.2.0_linux_arm64.tar.gz";
+    x86_64-linux = "https://github.com/wimpysworld/WonKey/releases/download/v0.2.1/WonKey_0.2.1_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/wimpysworld/WonKey/releases/download/v0.2.1/WonKey_0.2.1_linux_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "wonkey";
-  version = "0.2.0";
+  version = "0.2.1";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -30,12 +28,11 @@ stdenvNoCC.mkDerivation {
 
   sourceRoot = ".";
 
-  nativeBuildInputs = [ installShellFiles makeWrapper ];
+  nativeBuildInputs = [ installShellFiles ];
 
   installPhase = ''
     mkdir -p $out/bin
     cp -vr ./wonkey $out/bin/wonkey
-    wrapProgram $out/bin/wonkey --prefix PATH : ${lib.makeBinPath ([ curl ])}
   '';
 
   meta = {
